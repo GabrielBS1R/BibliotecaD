@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Libro De Los Cinco Anillos - Detalle del Libro</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/BibliotecaDigital.css">
+    <link rel="stylesheet" href="../CSS/LibroDetalles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="../IMG/Logo sin fondo.webp" alt="Logo Biblioteca Digital" style="height: 55px; width: auto;">
+            <h1>Biblioteca Digital</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="detalle-libro-container">
+            <!-- Botón Volver -->
+            <a href="../Index-HTML/Index.html" class="boton-volver">
+                ← Volver a la biblioteca
+            </a>
+
+            <!-- Contenido Principal -->
+            <div class="detalle-libro">
+                <!-- Imagen y Detalles Básicos -->
+                <div class="libro-portada-info">
+                    <div class="portada-container">
+                        <img src="../IMG/Portadas/Historia De La Filosofia.webp" alt="Portada de Historia de la Filosofia" class="portada-detalle">
+                    </div>
+                    <div class="info-basica">
+                        <h1>Historia De La Filosofia Occidental</h1>
+                        <div class="metadata">
+                            <p class="autor">Por Bertrand Russell</p>
+                            <p class="año">Año: 1945</p>
+                            <div class="calificacion">
+                                <span class="estrellas">★★★★☆</span>
+                                <span class="puntuacion">4.3/5</span>
+                                <p class="expertos">Calificación de expertos</p>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">Arte</span>
+                                <span class="tag">Novela Filosófica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="agregarAlCarrito(10, 'El Origen De Las Especies');" class="btn-agregar-carrito">
+                    Agregar al carrito
+                </button>
+
+                <script>
+                    // Función para agregar al carrito
+                    function agregarAlCarrito(id, nombre) {
+                        // Pedir al usuario la cantidad de días
+                        let dias = prompt("¿Cuántos días quieres alquilar este libro? (1-30)", "1");
+
+                        // Validar la cantidad de días ingresada
+                        if (dias === null || isNaN(dias) || dias < 1 || dias > 30) {
+                            alert("Por favor, ingresa un número de días válido entre 1 y 30.");
+                            return; // Salir de la función si no es válido
+                        }
+
+                        // Obtener el carrito actual desde localStorage, o crear uno vacío si no existe
+                        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+                        // Verificar si el producto ya está en el carrito
+                        let productoExistente = carrito.find(item => item.id === id);
+
+                        if (productoExistente) {
+                            // Si el producto ya está, se actualiza la cantidad de días
+                            productoExistente.dias = parseInt(dias);
+                        } else {
+                            // Si no está, se agrega el nuevo libro con los días
+                            carrito.push({ id, nombre, dias: parseInt(dias) });
+                        }
+
+                        // Guardar el carrito actualizado en localStorage
+                        localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                        // Confirmar al usuario
+                        alert(`"${nombre}" ha sido agregado al carrito para ${dias} días.`);
+
+                        // Redirigir a la página del carrito
+                        window.location.href = "/Index-HTML/Carrito.html";
+                    }
+                </script>
+
+                <!-- Sinopsis y Detalles -->
+                <div class="contenido-detallado">
+                    <section class="sinopsis">
+                        <h2>Sinopsis</h2>
+                        <p>El “Libro de los Cinco Anillos” (Go-rin no sho) es un tratado sobre el kenjutsu (arte marcial japonés con sable) escrito por Miyamoto Musashi, un famoso samurái y duelistas invicto, en su vejez, entre 1643 y 1645. El libro está dedicado a su pupilo Terao Magonojo y se considera un clásico de la estrategia militar japonesa, comparable a “El arte de la guerra” de Sun Tzu.</p>
+                        <p>El libro de Musashi no solo se enfoca en el arte marcial, sino que también explora conceptos como la disciplina, la concentración, la flexibilidad y la adaptabilidad. El autor aboga por la idea de que el combatiente ideal debe ser capaz de alcanzar un estado de “vacío” o ausencia de pensamientos y emociones, permitiendo así una reacción más natural y efectiva en la lucha.</p>
+
+                    <section class="detalles-adicionales">
+                        <h2>Detalles del Libro</h2>
+                        <div class="grid-detalles">
+                            <div class="detalle">
+                                <h3>Editorial</h3>
+                                <p>Ediciones Paidos</p>
+                            </div>
+                            <div class="detalle">
+                                <h3>Idioma Original</h3>
+                                <p>Ingles</p>
+                            </div>
+                            <div class="detalle">
+                                <h3>Páginas</h3>
+                                <p>896</p>
+                            </div>
+                            <div class="detalle">
+                                <h3>ISBN</h3>
+                                <p>978-8449319295</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="criticas">
+                        <h2>Críticas de Expertos</h2>
+                        <div class="critica">
+                            <p class="texto-critica">"Una historia que combina la magia, el misticismo, la sabiduría y la maravilla en un mensaje inspirador sobre la importancia de seguir nuestros sueños."</p>
+                            <p class="autor-critica">- The New York Times</p>
+                        </div>
+                        <div class="critica">
+                            <p class="texto-critica">"Un fenómeno literario que ha inspirado a millones de lectores en todo el mundo a perseguir sus sueños."</p>
+                            <p class="autor-critica">- The Guardian</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Biblioteca Digital. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

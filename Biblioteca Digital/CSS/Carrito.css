@@ -1,0 +1,178 @@
+/* Estilos generales para la página */
+.page-wrapper {
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e1e1e; /* Fondo oscuro para todo el body */
+    color: white; /* Todo el texto será blanco */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    flex-grow: 1;
+}
+
+/* Carrito */
+.cart-container {
+    width: 80%;
+    max-width: 1200px;
+    background-color: #333; /* Fondo oscuro para el carrito */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    color: white; /* Aseguramos que el texto dentro de la sección sea blanco */
+}
+
+.cart-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white; /* Título en blanco */
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #444; /* Ligeramente más claro que el fondo */
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: white; /* Título del libro en blanco */
+}
+
+.cart-item-days,
+.cart-item-quantity {
+    font-size: 16px;
+    margin-top: 5px;
+    color: white; /* Días y cantidad en blanco */
+}
+
+.remove-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.remove-button:hover {
+    background-color: darkred;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white; /* Total en blanco */
+}
+
+.confirm-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Botón azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.confirm-button:disabled {
+    background-color: #ccc;
+}
+
+.confirm-button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: #111111;
+    color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+header, footer {
+    background: linear-gradient(135deg, #3b82f6, #1e1e1e);
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #333333;
+    text-align: left;
+}
+th {
+    background-color: #000000;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+tr:hover {
+    background-color: #1a1a1a;
+}
+.btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #2563eb;
+}

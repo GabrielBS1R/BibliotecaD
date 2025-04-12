@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../CSS/BibliotecaDigital.css">
+  <title>Carrito de Compras - Biblioteca Digital</title>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Carrito de Compras</h1>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="container">
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se cargarán los libros agregados al carrito -->
+      </tbody>
+    </table>
+    <button class="btn" onclick="clearCart()">Vaciar Carrito</button>
+    <!-- Redirige a index.php al hacer clic en "Continuar Comprando" -->
+    <button class="btn" onclick="window.location.href='index.php'">Continuar Comprando</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Biblioteca Digital. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Se carga la lógica de JavaScript desde un archivo externo -->
+  <script src="../JAVASCRIPT/Carrito.js"></script>
+</body>
+</html>

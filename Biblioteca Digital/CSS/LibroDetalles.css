@@ -1,0 +1,242 @@
+/* Estilos específicos para la página de detalle */
+.detalle-libro-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.boton-volver {
+    display: inline-block;
+    color: #1a73e8;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.btn-agregar-carrito {
+    width: 100%;
+    margin-top: 8px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #1a1a1a;
+    border: 1px solid #1a73e8;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.btn-agregar-carrito:hover {
+    background-color: #1a73e8;
+    color: #ffffff;
+}
+
+/* Aseguramos que el contenedor mantenga el botón alineado */
+.portada-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.boton-volver:hover {
+    background: rgba(26, 115, 232, 0.1);
+    transform: translateX(-5px);
+}
+
+.detalle-libro {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.libro-portada-info {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.portada-container {
+    width: 100%;
+}
+
+.portada-detalle {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info-basica {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-basica h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.autor {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+}
+
+.año {
+    color: #808080;
+}
+
+.calificacion {
+    margin: 1rem 0;
+}
+
+.estrellas {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.puntuacion {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.expertos {
+    color: #808080;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(26, 115, 232, 0.2);
+    color: #1a73e8;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.contenido-detallado {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.sinopsis, .detalles-adicionales, .criticas {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #333;
+}
+
+.sinopsis h2, .detalles-adicionales h2, .criticas h2 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.sinopsis p {
+    color: #b0b0b0;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.grid-detalles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.detalle h3 {
+    color: #808080;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.detalle p {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.critica {
+    background: #242424;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.texto-critica {
+    color: #b0b0b0;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.autor-critica {
+    color: #1a73e8;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .libro-portada-info {
+        grid-template-columns: 1fr;
+    }
+
+    .portada-container {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .info-basica h1 {
+        font-size: 2rem;
+    }
+
+    .grid-detalles {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .detalle-libro {
+        padding: 1rem;
+    }
+
+    .grid-detalles {
+        grid-template-columns: 1fr;
+    }
+
+    .info-basica h1 {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steve Jobs - Detalle del Libro</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/BibliotecaDigital.css">
+    <link rel="stylesheet" href="../CSS/LibroDetalles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="../IMG/Logo sin fondo.webp" alt="Logo Biblioteca Digital" style="height: 55px; width: auto;">
+            <h1>Biblioteca Digital</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="detalle-libro-container">
+            <!-- Botón Volver -->
+            <a href="../Index-HTML/Index.html" class="boton-volver">
+                ← Volver a la biblioteca
+            </a>
+
+            <!-- Contenido Principal -->
+            <div class="detalle-libro">
+                <!-- Imagen y Detalles Básicos -->
+                <div class="libro-portada-info">
+                    <div class="portada-container">
+                        <img src="../IMG/Portadas/SteveJobs.webp" alt="Portada de Steve Jobs" class="portada-detalle">
+                    </div>
+                    <div class="info-basica">
+                        <h1>Steve Jobs</h1>
+                        <div class="metadata">
+                            <p class="autor">Por Walter Isaacson</p>
+                            <p class="año">Año: 2011</p>
+                            <div class="calificacion">
+                                <span class="estrellas">★★★★★</span>
+                                <span class="puntuacion">4.8/5</span>
+                                <p class="expertos">Calificación de expertos</p>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">Biografía</span>
+                                <span class="tag">Tecnología</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="agregarAlCarrito(10, 'Steve Jobs');" class="btn-agregar-carrito">
+                    Agregar al carrito
+                </button>
+
+                <script>
+                    // Función para agregar al carrito
+                    function agregarAlCarrito(id, nombre) {
+                        let dias = prompt("¿Cuántos días quieres alquilar este libro? (1-30)", "1");
+                        if (dias === null || isNaN(dias) || dias < 1 || dias > 30) {
+                            alert("Por favor, ingresa un número de días válido entre 1 y 30.");
+                            return;
+                        }
+                        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                        let productoExistente = carrito.find(item => item.id === id);
+                        if (productoExistente) {
+                            productoExistente.dias = parseInt(dias);
+                        } else {
+                            carrito.push({ id, nombre, dias: parseInt(dias) });
+                        }
+                        localStorage.setItem('carrito', JSON.stringify(carrito));
+                        alert(`"${nombre}" ha sido agregado al carrito para ${dias} días.`);
+                        window.location.href = "/Index-HTML/Carrito.html";
+                    }
+                </script>
+
+                <!-- Sinopsis y Detalles -->
+                <div class="contenido-detallado">
+                    <section class="sinopsis">
+                        <h2>Sinopsis</h2>
+                        <p>Una biografía autorizada que narra la vida de Steve Jobs, el visionario cofundador de Apple, explorando su genio creativo, su carácter complejo y su influencia en la tecnología moderna.</p>
+                    </section>
+
+                    <section class="detalles-adicionales">
+                        <h2>Detalles del Libro</h2>
+                        <div class="grid-detalles">
+                            <div class="detalle">
+                                <h3>Editorial</h3>
+                                <p>Simon & Schuster</p>
+                            </div>
+                            <div class="detalle">
+                                <h3>Idioma Original</h3>
+                                <p>Inglés</p>
+                            </div>
+                            <div class="detalle">
+                                <h3>Páginas</h3>
+                                <p>656</p>
+                            </div>
+                            <div class="detalle">
+                                <h3>ISBN</h3>
+                                <p>978-1451648539</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="criticas">
+                        <h2>Críticas de Expertos</h2>
+                        <div class="critica">
+                            <p class="texto-critica">"Una obra magistral que captura la esencia de un genio revolucionario y su legado en la tecnología y el diseño."</p>
+                            <p class="autor-critica">- The Wall Street Journal</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Biblioteca Digital. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
